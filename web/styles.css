@@ -1,0 +1,97 @@
+@font-face { font-family: Montserrat; src: url('Montserrat-Regular.ttf'); }
+@font-face { font-family: Montserrat; src: url('Montserrat-Bold.ttf'); font-weight: bold;}
+
+
+:root {
+    --background-primary-color: #ffffff;
+    --background-secondary-color: #d9d9d9;
+    --primary-text-color: #353535;
+    --secondary-text-color: #353535;
+    --active-primary-color: #aed9e0;
+}  
+
+* {
+    font-family: "Montserrat";
+}
+
+body {
+    margin: 0;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+    background-color: var(--background-secondary-color);
+  }
+
+.player_list {
+    margin: 10px;
+    color: var(--primary-text-color);
+}
+
+.content {
+    background-color: var(--background-primary-color);
+}
+
+.topic_info_input {
+    margin: 10px;
+}
+
+.post_list {
+    font-size: smaller;
+    margin: 10px;
+}
+
+.post {
+    padding: 3px;
+}
+
+.post:hover {
+    background-color: var(--background-secondary-color);
+}
+
+a {
+    font-family: inherit;
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+input button {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+button {
+    border: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    color: var(--primary-text-color);
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background: var(--active-primary-color);
+}
+
+input {
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 10px;
+    background-color: var(--background-secondary-color);
+    box-sizing: border-box;
+}
+
+input:focus {
+    color: var(--background-primary-color);
+    outline:none;
+    text-decoration: underline;
+    background-color: var(--active-primary-color);
+}

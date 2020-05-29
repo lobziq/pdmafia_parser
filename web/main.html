@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pdmafia parser by lobziq</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript">
+    async function parse() {
+        let posts = await eel.parse_topic(document.getElementById("topic_id").value, document.getElementById("topic_start_page").value)();
+        let parent = document.getElementById("post_list");
+
+        for (var post of posts["posts"])
+        {
+            if (post.bolds.length > 0 && document.getElementById(post.local_id) == null) {
+                parent.innerHTML += `<div class='post'><a href='${post.url}' target='_blank' id='${post.local_id}'>${post.page_num}${post.local_id} <b>${post.author}</b>&emsp;${post.bolds.join(' ')} </a></div>`
+            }
+        }
+        let soMany = 10;
+        console.log(posts);
+        document.getElementById("topic_start_page").value = posts.current_page;
+     }
+
+    </script>
+</head>
+<body>
+<div class="app">
+    <div class="sidebar">
+        <div class="player_list">
+            здесь будет фильтрация по списку игроков
+        </div>
+    </div>
+    <div class="content">
+        <div class="topic_info_input">
+            <input type="text" name="input" id="topic_id" placeholder="topic id">
+            <input type="text" name="input" id="topic_start_page" placeholder="start page" value="1">
+            <button onclick="parse()">parse</button>
+        </div>
+        <div id="post_list" class="post_list"></div>
+    </div>
+</div>
+</body>
+</html>
