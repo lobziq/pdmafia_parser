@@ -26,5 +26,5 @@ soupsieve==2.0
 stringcase==1.2.0
 typing-extensions==3.7.4.2
 typing-inspect==0.6.0
-urllib3==1.25.9
+urllib3==1.26.5
 whichcraft==0.6.1
